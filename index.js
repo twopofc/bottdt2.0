@@ -47,8 +47,8 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: 'ᏴϴͲ ᎠႮ ᏦᎬᏦᎬ', 
-    instagram: 'https://www.instagram.com/twoperrejota
-    nomer: 'wa.me/5521989278431',
+    instagram: 'https://www.instagram.com/kaic_de_paula?r=nametag', 
+    nomer: 'wa.me/5521989278431:+55',
     youtube: 'https://youtube.com/channel/UC2a7N-vZ5xrDF-0nfcaUspw', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["5521989278431@s.whatsapp.net"] 
+			const ownerNumber = ["5521989278431:+55@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -397,7 +397,7 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('5521989278431@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('5521989278431:+55@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
                     break
                 case 'ssweb':
@@ -702,7 +702,7 @@ client.on('group-participants-update', async (anu) => {
 				
 			case 'loli': 
 				    try {
-						res = await fetchJson(`https://br.pinterest.com/decolosso12/loli`, {method: 'get'})
+						res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Citai Lolimu'})
 					} catch (e) {
@@ -713,7 +713,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'nsfwloli': 
 				    try {
 						if (!isNsfw) return reply('Desculpe, este recurso não foi habilitado / erro de servidor de bot')
-						res = await fetchJson(`https://br.pinterest.com/decolosso12/loli/random?nsfw=true`, {method: 'get'})
+						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'tomee'})
 					} catch (e) {
